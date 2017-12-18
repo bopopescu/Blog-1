@@ -1,4 +1,4 @@
-{{% extends base.html %}}
+{% extends 'base.html' %}
 
 {% block title %}
 
@@ -14,17 +14,23 @@
 
 {% block content %}
 
-<form action="{{ url_for('posts.create_post')}}" method="POST">
+    <div class="col-md-6">
 
-    {{% for field in form %}}
+        <form action="{{url_for('posts.create_post')}}" method="POST">
 
-    <div class="form-group">
+            {% for field in form %}
 
-        {{ field }}
+            <div class="form-group">
+                {{ field.label(class='control-label') }}
+                {{ field(class='form-control')}}
 
+            </div>
+
+            {% endfor %}
+
+            <button type="submit" class="btn btn-info">Create post</button>
+
+        </form>
     </div>
-
-    {% endfor %}
-</form>
 
 {% endblock %}

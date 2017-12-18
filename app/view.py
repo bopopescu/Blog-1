@@ -7,6 +7,7 @@ def index():
     name = 'Lol'
     return render_template('index.html', name=name)
 
+
 @app.route('/profile')
 def profile():
     name = 'Sergey'
