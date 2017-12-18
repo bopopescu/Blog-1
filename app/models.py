@@ -32,7 +32,7 @@ class Post(db.Model):
             self.slug = slugify(self.title)
 
     def __repr__(self):
-        return '<Post if {}, title {}>'.format(self.id, self.title)
+        return '<Post id {}, title {}>'.format(self.id, self.title)
 
 
 class Tag(db.Model):
